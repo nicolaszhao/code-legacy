@@ -1,0 +1,115 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #444;
+}
+
+ul {
+	list-style: none;
+}
+
+.clear {
+	clear: both;
+}
+
+/*-------------------------------------
+ jquery ui slider
+ --------------------------------------*/
+.slider li {
+	width: 100px;
+	padding: 5px;
+	float: left;
+}
+
+.slider li a {
+	display: block;
+	height: 98px;
+	border: solid 1px #f1f1f1;
+	color: #444;
+	text-decoration: none;
+}
+
+/*
+ --horizontal------------------------------------*/
+#images-slider {
+	width: 440px;
+	margin: 20px auto;
+	padding: 5px;
+	border: solid 1px #ccc;
+}
+
+#images-slider .inner {
+	width: 440px;
+	height: 110px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+#images-slider .move {
+	width: 425px;
+	height: 5px;
+	margin: 0 auto;
+	border: solid 1px #ccc;
+	background: #f1f1f1;
+	-moz-border-radius: 3px;
+	position: relative;
+}
+
+#images-slider .move a, #vertical-slider .move a {
+	display: block;
+	width: 10px;
+	height: 10px;
+	overflow: hidden;
+	-moz-border-radius: 3px;
+	border: solid 1px #4A6EFF;
+	background: #829BFF;
+	position: absolute;
+}
+
+#images-slider .move a {
+	top: -3px;
+	left: 0;
+}
+
+/*
+ --vertical------------------------------------*/
+#vertical-slider {
+	width: 130px;
+	padding: 5px;
+	margin: 0 auto;
+	border: solid 1px #ccc;
+}
+
+#vertical-slider .inner {
+	width: 110px;
+	height: 440px;
+	margin-right: 10px;
+	float: left;
+	overflow: hidden;
+}
+
+#vertical-slider li {
+	float: none;
+}
+
+#vertical-slider .move {
+	width: 5px;
+	height: 430px;
+	margin-top: 5px;
+	border: solid 1px #ccc;
+	background: #f1f1f1;
+	-moz-border-radius: 3px;
+	position: relative;
+	float: left;
+}
+
+#vertical-slider .move a {
+	bottom: 100%;
+	left: -3px;
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Samples - Data Tree</title>
+		<style>
+			body, div, p, h1, ul { margin: 0; padding: 0; }
+			body { font: 12px/1.6 Verdana; color: #555; }
+			
+			.clearfix { clear: both; }
+			
+			#container { width: 960px; margin: 0 auto; }
+			#header,
+			#content { margin-bottom: 30px; }
+			#header,
+			#footer { padding: 15px 0; }
+			#footer { color: #999; }
+			
+			.sample-tree { list-style-type: circle; }
+			.sample-tree, .sample-tree ul { padding-left: 20px; list-style-type: disc; color: #ccc; }
+			.sample-tree-text { color: #555; }
+		</style>
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="js/data-tree.js"></script>
+		<script>
+			$(function() {
+				var data = [
+						{ id: 4, parentid: 1, name: ".Net新手区" },
+						{ id: 5, parentid: 1, name: "Asp.Net" },
+						{ id: 6, parentid: 1, name: "C#" },
+						{ id: 7, parentid: 1, name: "WinForm" },
+						{ id: 1, parentid: 0, name: ".Net技术" },
+						{ id: 2, parentid: 0, name: "编程语言" },
+						{ id: 3, parentid: 0, name: "Web 前端" },
+						{ id: 8, parentid: 4, name: ".Net码畜区" },
+						{ id: 9, parentid: 2, name: "Java" },
+						{ id: 10, parentid: 9, name: 'K Java' },
+						{ id: 11, parentid: 3, name: 'CSS' },
+						{ id: 12, parentid: 2, name: "PHP" },
+						{ id: 13, parentid: 3, name: 'HTML' },
+						{ id: 13, parentid: 3, name: 'JavaScript' }
+					];
+				
+				$('#content').append(new DataTree(data).$ul);
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1>Data Tree</h1>
+			</div>
+			<div id="content">
+				
+			</div>
+			<div id="footer">
+				<p>&copy; Copyright  by Nicolas.Z</p>
+			</div>
+		</div>
+	</body>
+</html>

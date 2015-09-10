@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<title>使用jQueryUI Slider滚动图片库</title>
+		<link rel="stylesheet" href="theme/slider.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js">
+		</script>
+		<script type="text/javascript" src="http://jquery-ui.googlecode.com/svn/tags/1.7.2/ui/ui.core.js">
+		</script>
+		<script type="text/javascript" src="http://jquery-ui.googlecode.com/svn/tags/1.7.2/ui/ui.slider.js">
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				var horizontal = $("#images-slider .inner"), li1 = $("li", horizontal), ul1 = $("ul", horizontal);
+				var vertical = $("#vertical-slider .inner"), li2 = $("li", vertical), ul2 = $("ul", vertical);
+				
+				var width1 = li1.outerWidth(true) * li1.size();
+				ul1.css({
+					"width": width1 + "px",
+					"position": "relative",
+					"z-index": "1"
+				})
+				horizontal.css({
+					"position": "relative",
+					"z-index": "2",
+					"overflow": "hidden"
+				});
+				$("#images-slider .move").slider({
+					max: width1 - horizontal.width(),
+					slide: function(e, ui){
+						ul1.css("left", "-" + ui.value + "px");
+					}
+				});
+				
+				var height = li2.outerHeight(true) * li2.size();
+				ul2.css({
+					"height": height,
+					"position": "absolute",
+					"z-index": "1"
+				})
+				vertical.css({
+					"position": "relative",
+					"z-index": "2",
+					"overflow": "hidden"
+				});
+				
+				
+				$("#vertical-slider .move").slider({
+					orientation: "vertical",
+					value:height-vertical.height(),
+					max:  height-vertical.height(),
+					slide: function(e, ui){
+						ul2.css("bottom", -ui.value);
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="images-slider" class="slider">
+			<div class="inner">
+				<ul>
+					<li>
+						<a href="">1</a>
+					</li>
+					<li>
+						<a href="">2</a>
+					</li>
+					<li>
+						<a href="">3</a>
+					</li>
+					<li>
+						<a href="">4</a>
+					</li>
+					<li>
+						<a href="">5</a>
+					</li>
+					<li>
+						<a href="">6</a>
+					</li>
+					<li>
+						<a href="">7</a>
+					</li>
+					<li>
+						<a href="">8</a>
+					</li>
+				</ul>
+				<div class="clear">
+				</div>
+			</div>
+			<div class="move">
+			</div>
+		</div>
+		<div id="vertical-slider" class="slider">
+			<div class="inner">
+				<ul>
+					<li>
+						<a href="">1</a>
+					</li>
+					<li>
+						<a href="">2</a>
+					</li>
+					<li>
+						<a href="">3</a>
+					</li>
+					<li>
+						<a href="">4</a>
+					</li>
+					<li>
+						<a href="">5</a>
+					</li>
+					<li>
+						<a href="">6</a>
+					</li>
+					<li>
+						<a href="">7</a>
+					</li>
+					<li>
+						<a href="">8</a>
+					</li>
+					<li>
+						<a href="">9</a>
+					</li>
+				</ul>
+			</div>
+			<div class="move move2">
+			</div>
+			<div class="clear">
+			</div>
+		</div>
+	</body>
+</html>

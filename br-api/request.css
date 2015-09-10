@@ -1,0 +1,101 @@
+.request-console {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	font: 12px/1 Consolas;
+	color: #18191A;
+	background: #fcfcfc;
+}
+
+.request-console-toolbar {
+	padding: 2px 3px; 
+	border: solid 1px #aaa;
+	border-width: 1px 0;
+	background: #f0f1f2;
+}
+
+.request-console-toolbar .request-console-button {
+	width: 78px;
+	height: 19px;
+	margin-right: 2px;
+	padding: 0;
+	font-family: inherit;
+	font-size: 12px;
+	text-align: center;
+	outline: none;
+	border: none;
+	background: #cfe0ed;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.request-console-toolbar .request-console-button:hover {
+	background: #aed0e8;
+}
+
+.request-console-content {
+	padding-left: 6px; 
+	max-height: 240px; 
+	overflow: auto;
+}
+
+.request-console-content p {
+	padding-left: 10px;
+	line-height: 20px;
+	border-left: solid 6px #aaa;
+	color: #18191a;
+}
+
+.request-console-content p:hover {
+	background: #d3e6f4;
+}
+
+.request-console-content .request-console-log {
+	border-color: #aaa;
+}
+
+.request-console-content .request-console-info {
+	border-color: #13bcf1;
+}
+
+.request-console-content .request-console-warn {
+	border-color: #fca526;
+}
+
+.request-console-content .request-console-error {
+	border-color: #d43232;
+	background: #fddddd;
+}
+
+.request-console-content .request-console-text-wr {
+	padding-left: 6px;
+}
+
+.request-console-content .request-console-text-item {
+	padding-left: 6px;
+}
+
+.request-console-content .request-console-text-label {
+	padding: 0 6px;
+	color: #2c699f;
+}
+
+.request-console-content .request-console-text-number {
+	color: #6e8900;
+}
+
+.request-console-content .request-console-text-boolean {
+	color: #bf5656;
+}
+
+.request-console-content .request-console-text-string {
+	color: #cd9a50;
+}
+
+.request-console-content .request-console-text-others {
+	color: #757772;
+}

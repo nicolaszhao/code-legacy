@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery UI scrollbar</title>
+		<style>
+			* { padding: 0; margin: 0; }
+			body { font: 12px Verdana; }
+			ul { list-style:none; }
+			#scroll-panel { width:320px; margin: 15px auto;overflow:hidden; border:solid 1px #ddd; }
+			#scroll-content { width: 1200px; height: 120px; }
+			#scroll-content li { width:100px; height:100px; padding:10px; float:left; }
+			#scroll-content strong {display:block;height:98px;border:solid 1px #ddd; font-size:30px; text-align:center; line-height:94px;}
+			#scroll-bar-wrap{width:98%;height:20px;margin:0 auto;}
+			#scroll-bar{height:20px;margin:0 auto;position:relative;}
+			#scroll-bar .ui-slider-handle{display:block;height:16px;position:absolute;top:1px;left:0;border:solid 1px #ddd; -moz-border-radius:3px; outline:none; }
+		</style>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js">
+		</script>
+		<script type="text/javascript" src="http://jquery-ui.googlecode.com/svn/tags/1.7.2/ui/ui.core.js">
+		</script>
+		<script type="text/javascript" src="http://jquery-ui.googlecode.com/svn/tags/1.7.2/ui/ui.slider.js">
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				var panel = $("#scroll-panel"),
+					content = $("#scroll-content");
+					li = $("li", content);
+					
+				var scrollbar = $("#scroll-bar").slider({
+					slide: function(e, ui){
+						if (content.width() > panel.width()) {
+							content.css("margin-left", Math.round(ui.value / 100 * (panel.width() - content.width()) ))
+						}
+						else {
+							content.css("margin-left", 0);
+						}
+					}
+				});
+				
+				content.width(li.size() * li.outerWidth());
+				
+				function sizeScrollbar() {
+					var proportion = panel.width() / content.width();
+					var handleSize = panel.width() * proportion;
+					scrollbar.find(".ui-slider-handle").css({
+						width: handleSize - 2,
+						"margin-left": -handleSize / 2
+					})
+					.end().width($("#scroll-bar-wrap").width() - handleSize);
+				}
+				
+				sizeScrollbar();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="scroll-panel">
+			<ul id="scroll-content">
+				<li><strong>1</strong></li>
+				<li><strong>2</strong></li>
+				<li><strong>3</strong></li>
+				<li><strong>4</strong></li>
+				<li><strong>5</strong></li>
+				<li><strong>6</strong></li>
+				<li><strong>7</strong></li>
+				<li><strong>8</strong></li>
+				<li><strong>9</strong></li>
+				<li><strong>10</strong></li>
+			</ul>
+			<div id="scroll-bar-wrap">
+				<div id="scroll-bar"></div>
+			</div>
+		</div>
+	</body>
+</html>

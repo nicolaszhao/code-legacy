@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Tooltip</title>
+		<style type="text/css">
+			body, div { padding:0; margin:0; }
+			body { font:10px/1.6 Verdana, Arial, sans-serif; }
+			ul { width: 200px; border: solid 1px #ccc; padding: 2px; border-radius: 4px; }
+			li { padding: 3px 5px; border: solid 1px #ccc; margin-bottom: 2px; border-radius: 4px; }
+			a { display: block; color: #333; }
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript">
+			var Tooltip = function(){
+				this.delayTimeout = null;
+				this.delay = 200;
+				this.element = $('<div/>', {
+						'css': {
+							'display': 'none',
+							'position': 'absolute',
+							'padding': 5,
+							'background': '#ff9',
+							'border': 'solid 1px #fc6',
+							'color': '#000',
+							'box-shadow': '2px 2px 2px #999',
+							'opacity': 0.8
+						},
+						'class': 'tooltip'
+					}).appendTo('body');
+			};
+			Tooltip.prototype = {
+				startDelay: function( coordinates, text, delay ){
+					if (this.delayTimeout == null) {
+						var that = this;
+						if ( typeof delay !== 'undefined' ) {
+							delay = parseInt( delay, 10 );
+							if ( !isNaN( delay ) ) {
+								this.delay = delay ;
+							}
+						}
+						this.delayTimeout = setTimeout(function(){
+							that.show( coordinates, text );
+						}, this.delay);
+					}
+				},
+				reposition: function( coordinates ) {
+					$( this.element ).css({
+						'left': coordinates.X + 20,
+						'top': coordinates.Y + 20
+					});
+				},
+				show: function( coordinates, text ){
+					clearTimeout(this.delayTimeout);
+					this.delayTimeout = null;
+					this.reposition( coordinates );
+					$(this.element).html( text ).show();
+				},
+				hide: function(){
+					clearTimeout(this.delayTimeout);
+					this.delayTimeout = null;
+					$(this.element).hide();
+				}
+			};
+			var TooltipManager = (function(){
+				var storedInstance = null;
+				return {
+					addTooltip: function(targetElement, text, delay){
+						var tooltip = this.getTooltip(), isDisplay = false;
+						$(targetElement).hover(
+							function(e){
+								if ( text ) {
+									isDisplay = true;
+									tooltip.startDelay( { X: e.pageX, Y: e.pageY }, text, delay);
+								}
+							},
+							function(){
+								isDisplay = false;
+								tooltip.hide();
+							}
+						).mousemove(function( e ) {
+							if ( isDisplay ) {
+								tooltip.reposition({
+									X: e.pageX,
+									Y: e.pageY
+								});
+							}
+						});
+					},
+					getTooltip: function(){
+						if (storedInstance == null) {
+							storedInstance = new Tooltip();
+						}
+						return storedInstance;
+					}
+				};
+			})();
+			
+			$(function(){
+				$('a').each(function(){
+					var title = $(this).get(0).title;
+					$(this).get(0).title = '';
+					TooltipManager.addTooltip(this, title, 0);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li>
+					<a href="http://www.google.com/" title="谷歌: http://www.google.com/">Google</a>
+				</li>
+				<li>
+					<a href="http://www.baidu.com/" title="百度: http://www.baidu.com/">Baidu</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

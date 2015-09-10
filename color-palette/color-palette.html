@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Demos - Color Palette</title>
+		<style>
+			body, div, p, ul, ol, li { padding: 0; margin: 0; }
+			body { font: 11px/1.6 Trebuchet MS; color: #333; }
+			input, select, textarea { font-size: inherit; font-family: inherit; font-weight: inherit; }
+			#container { width: 760px; margin: 0 auto; }
+			#header, #content { margin-bottom: 15px; }
+			#footer { color: #666; }
+			h1 em { font-size: 12px; color: #999; }
+			.input { padding: 2px; border: solid 1px #999; border-radius: 2px; }
+			
+			#color-palette { padding: 10px 10px 30px; border: solid 1px #999; border-radius: 4px; }
+			#board { width: 100px; height: 100px; margin: 20px 0 0 60px; border: solid 2px #E6E6E6; background: #fff; }
+			.field-panel { margin-bottom: 10px; }
+			.field-text { width: 60px; float: left; }
+			.button-panel { padding-left: 60px; }
+			.button { padding: 3px 6px; cursor: pointer; color: #333; text-shadow: 0 1px 1px #fff; border: solid 1px #999; border-radius: 3px; background: #ddd; }
+			.button:hover { background: #f1f1f1; box-shadow: 0 0 3px #999; }
+			
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+		</script>
+		<script src="js/color-palette.js"></script>
+		<script>
+			$(function() {
+				var changeColor = function( darkenOrLighten ) {
+					var hex = $( '#color' ).val();
+					
+					hex = darkenOrLighten === 'darken' ? colorPalette.getDarkerColor( hex ) : colorPalette.getLighterColor( hex );
+					$( '#color' ).val( hex );
+					$( '#board' ).css( 'background', '#' + hex );
+				};
+				
+				$( '#lighten' ).bind( 'click', function() {
+					changeColor( 'lighten' );
+				});
+				
+				$( '#darken' ).bind( 'click', function() {
+					changeColor( 'darken' );
+				});
+			});
+			
+		</script>
+		
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1>Color Palette</em></h1>
+			</div>
+			<div id="content">
+				
+				<div id="color-palette">
+					<div class="field-panel">
+						<label class="field-text" for="color">Color:</label>
+						<input type="text" id="color" value="#ffffff" class="input" />
+					</div>
+					<div class="button-panel">
+						<input type="button" id="lighten" value="Lighten" class="button" />
+						<input type="button" id="darken" value="Darken" class="button" />
+					</div>
+					
+					<div id="board"></div>
+				</div>
+				
+				<div id="log">
+				</div>
+				
+			</div>
+			<div id="footer">
+				<p>
+					&copy; Copyright  by Nicolas.Z
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
