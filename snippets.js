@@ -31,3 +31,25 @@ var formatSize = function(bytes){
     
     return parseFloat(Math.max(bytes, 0.1).toFixed(2)) + ['KB', 'MB', 'GB', 'TB', 'PB', 'EB'][i];          
 };
+
+// 阶乘
+var factorialList = function(n, m) {
+	var row = function(n, m) {
+		m = m || 1;
+		var ret = n + ' * ' + m + ' = ' + (n * m) + '; ';
+
+		if (m++ < n) {
+			return ret += row(n, m);
+		} else {
+			return ret;
+		}
+	};
+
+	var ret = row(n);
+
+	if (n++ < m) {
+		return ret += '\n' + factorialList(n, m);
+	} else {
+		return ret;
+	}
+}; 
