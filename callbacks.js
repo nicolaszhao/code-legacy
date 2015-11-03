@@ -34,6 +34,6 @@ var fn = function() {
 	return cb.promise();
 };
 
-fn.done(function(data) {
+fn().done(function(data) {
 	console.log(JSON.stringify(data));
 });
