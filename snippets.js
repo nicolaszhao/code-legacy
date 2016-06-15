@@ -52,4 +52,41 @@ var factorialList = function(n, m) {
 	} else {
 		return ret;
 	}
-}; 
+};
+
+/**
+ * styles: []
+ *  item: {}
+ *    selector: [],
+ *    rules: {}
+ */
+var injectCSS = function(styles, document) {
+	var text = '',
+		i = 0,
+
+		loadStyle = function(css) {
+			var style = document.createElement('style');
+
+			style.type = 'text/css';
+
+			try {
+				style.appendChild(document.createTextNode(css));
+			} catch (ex) {
+				style.styleSheet.cssText = css;
+			}
+
+			document.getElementsByTagName('head')[0].appendChild(style);
+		};
+
+	for (; i < styles.length; i++) {
+		text += styles[i].selector.join(',');
+		text += '{';
+		for (var rule in styles[i].rules) {
+			text += rule + ':';
+			text += styles[i].rules[rule] + ';';
+		}
+		text += '}';
+	}
+
+	loadStyle(text);
+};
