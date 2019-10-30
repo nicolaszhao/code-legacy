@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Samples - 高度相等，且自适应的容器</title>
+		<style>
+			body, div, p, h1 { margin: 0; padding: 0; }
+			body { font: 12px/1.6 Verdana; color: #555; }
+			
+			.clearfix { clear: both; }
+			
+			#container { width: 960px; margin: 0 auto; }
+			#header,
+			#content { margin-bottom: 30px; }
+			#header,
+			#footer { padding: 15px 0; }
+			#footer { color: #999; }
+			
+			.sample-container { overflow: hidden; }
+			.sample-content { width: 150px; padding-bottom: 300px; margin: 0 10px -300px 0; background: #f1f1f1; float: left; }
+			.sample-content p { padding: 5px; }
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1>高度相等，并且能自适应的容器</h1>
+			</div>
+			<div id="content">
+				<div class="sample-container">
+					<div class="sample-content">
+						<p>Littering a dark and dreary road lay the past relics of browser-specific tags, incompatible DOMs, and broken CSS support. </p>
+					</div>
+					<div class="sample-content">
+						<p>The css Zen Garden invites you to relax and meditate on the important lessons of the masters. Begin to see with clarity. Learn to use the (yet to be) time-honored techniques in new and invigorating fashion. Become one with the web.</p>
+					</div>
+					<div class="sample-content">
+						<p>Today, we must clear the mind of past practices. Web enlightenment has been achieved thanks to the tireless efforts of folk like the W3C, WaSP and the major browser creators.</p>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<p>&copy; Copyright  by Nicolas.Z</p>
+			</div>
+		</div>
+	</body>
+</html>

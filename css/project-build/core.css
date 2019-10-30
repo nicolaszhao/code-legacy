@@ -1,0 +1,74 @@
+body {
+	font: 12px/1 Arial, "Microsoft YaHei", Helvetica, Verdana, sans-serif;
+	color: #333;
+	background: #fff;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+/* For ie10+ */
+input::-ms-clear,
+input::-ms-reveal {
+	display: none; 
+}
+
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+.input {
+	font-size: 12px;
+	font-family: inherit;
+	outline: none;
+}
+
+.button {
+	padding: 0;
+	font-size: 12px;
+	font-family: inherit;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+a.button {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	
+	text-decoration: none;
+}
+
+.button[disabled],
+.button[disabled]:hover,
+.button[disabled]:focus,
+.button[disabled]:active,
+.button-state-disabled,
+.button-state-disabled:hover,
+.button-state-disabled:focus,
+.button-state-disabled:active {
+	cursor: default;
+}
+
+.linkbutton {
+	outline: none;
+	text-decoration: underline;
+}
+
+.link {
+	color: #3285fa;
+}
+
+.link:hover {
+	text-decoration: underline;
+}

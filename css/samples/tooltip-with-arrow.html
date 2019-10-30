@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Samples - 带箭头的鼠标提示</title>
+		<style>
+			body, div, p, h1 { margin: 0; padding: 0; }
+			body { font: 12px/1.6 Verdana; color: #555; }
+			
+			.clearfix { clear: both; }
+			
+			#container { width: 960px; margin: 0 auto; }
+			#header,
+			#content { margin-bottom: 30px; }
+			#content { min-height: 100px; }
+			#header,
+			#footer { padding: 15px 0; }
+			#footer { color: #999; }
+			
+			.sample-tooltip { padding: 5px 10px; color: #fff; border: solid 2px #fff; border-radius: 4px; background: #000; box-shadow: 0 0 3px #666; position: absolute; }
+			.sample-tooltip-arrow { width: 50px; height: 15px; margin-left: -25px; position: absolute; bottom: -15px; left: 50%; overflow: hidden; }
+			.sample-tooltip-arrow:after { content: ''; width: 25px; height: 25px; position: absolute; top: -25px; left: 12px; border: solid 2px #fff; background: #000; box-shadow: 4px 4px 6px -6px #666; 
+				-webkit-transform: rotate(45deg); 
+				-moz-transform: rotate(45deg); 
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg); }
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1>带箭头的鼠标提示</h1>
+			</div>
+			<div id="content">
+				<div class="sample-tooltip">
+					<div class="sample-tooltip-content">
+						<p>Tooltip Content...</p>
+					</div>
+					<div class="sample-tooltip-arrow"></div>
+				</div>
+			</div>
+			<div id="footer">
+				<p>&copy; Copyright  by Nicolas.Z</p>
+			</div>
+		</div>
+	</body>
+</html>

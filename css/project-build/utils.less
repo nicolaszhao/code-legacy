@@ -1,0 +1,208 @@
+/*
+ * css3 utils
+ * ------------------------------------------------------ */
+.opacity(@opacity) {
+	@opacityPercentage: @opacity * 100;
+	opacity: @opacity;
+	filter: e("alpha(opacity = @{opacityPercentage})");
+}
+
+.transition(@prop; @duration; @timing: linear; @delay: 0s) {
+	-webkit-transition: @prop @duration @timing @delay;
+	-moz-transition: @prop @duration @timing @delay;
+	transition: @prop @duration @timing @delay;
+}
+
+.transform-transition(@duration; @timing: linear; @delay: 0s) {
+	-webkit-transition: -webkit-transform @duration @timing @delay;
+	-moz-transition: -moz-transform @duration @timing @delay;
+	transition: transform @duration @timing @delay;
+}
+
+.fade-transition(@duration; @timing: linear; @delay: 0s) {
+	-webkit-transition: opacity @duration @timing @delay, -webkit-transform @duration @timing @delay;
+	-moz-transition: opacity @duration @timing @delay, -moz-transform @duration @timing @delay;
+	transition: opacity @duration @timing @delay, transform @duration @timing @delay;
+}
+
+.transform(@translateX: 0; @translateY: 0; @translateZ: 0; @rotateX: 0; @rotateY: 0; @rotateZ: 0; @rotate: 0; @scale: 1) {
+	-webkit-transform: translateX(@translateX) translateY(@translateY) translateZ(@translateZ) rotateX(@rotateX) rotateY(@rotateY) rotateZ(@rotateZ) rotate(@rotate) scale(@scale);
+	-moz-transform: translateX(@translateX) translateY(@translateY) translateZ(@translateZ) rotateX(@rotateX) rotateY(@rotateY) rotateZ(@rotateZ) rotate(@rotate) scale(@scale);
+	transform: translateX(@translateX) translateY(@translateY) translateZ(@translateZ) rotateX(@rotateX) rotateY(@rotateY) rotateZ(@rotateZ) rotate(@rotate) scale(@scale);
+}
+
+.transform-origin(@x: center; @y: center) {
+	-webkit-transform-origin: @x @y;
+	-moz-transform-origin: @x @y;
+	transform-origin: @x @y;
+}
+
+/*
+ * @timing: linear | ease | ease-in | ease-out | ease-in-out
+ *   ease: 默认。动画以低速开始，然后加快，在结束前变慢。
+ *   ease-in: 动画以低速开始。
+ *   ease-out: 动画以低速结束。
+ *   ease-in-out: 动画以低速开始和结束。
+ * @direction: normal | alternate
+ * @fillmode: none | forwards
+ */
+.animation(@name; @duration; @timing: linear; @delay: 0s; @iterationCount: infinite; @direction: normal; @fillmode: none) {
+	-webkit-animation: @name @duration @timing @delay @iterationCount @direction @fillmode;
+	-moz-animation: @name @duration @timing @delay @iterationCount @direction @fillmode;
+	animation: @name @duration @timing @delay @iterationCount @direction @fillmode;
+}
+
+/*
+ * @state: paused | running
+ */
+.animation-state(@state) {
+	-webkit-animation-play-state: @state;
+	-moz-animation-play-state: @state;
+    animation-play-state: @state;
+}
+
+.perspective(@val) {
+	-webkit-perspective: @val;
+	-moz-perspective: @val;
+	perspective: @val;
+}
+
+.trans-style-3d() {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.backface-visibility(@type){
+  -webkit-backface-visibility: @type;
+  -moz-backface-visibility: @type;
+  backface-visibility: @type;
+}
+
+/*
+ * css3 animation keyframes utils
+ * ------------------------------------------------------ */
+.x-keyframes(@prefix; @from; @to) {
+	0% {
+		@{prefix}transform: translate3d(@from, 0, 0);
+	}
+	100% {
+		@{prefix}transform: translate3d(@to, 0, 0);
+	}
+}
+
+.y-keyframes(@prefix; @from; @to) {
+	0% {
+		@{prefix}transform: translate3d(0, @from, 0);
+	}
+	100% {
+		@{prefix}transform: translate3d(0, @to, 0);
+	}
+}
+
+.x-fadein-keyframes(@prefix; @from; @to) {
+	0% {
+		opacity: 0;
+		@{prefix}transform: translate3d(@from, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		@{prefix}transform: translate3d(@to, 0, 0);
+	}
+}
+
+.y-fadein-keyframes(@prefix; @from; @to) {
+	0% {
+		opacity: 0;
+		@{prefix}transform: translate3d(0, @from, 0);
+	}
+	100% {
+		opacity: 1;
+		@{prefix}transform: translate3d(0, @to, 0);
+	}
+}
+
+/*
+ * general utils
+ * ------------------------------------------------------ */
+.size(@width; @height; @size: 48rem) {
+	width: @width / @size;
+	height: @height / @size;
+}
+
+.bg-size(@width: 100%; @height: auto) {
+	background-size: @width @height;
+}
+
+.clear-text() {
+	text-indent: -999px;
+	overflow: hidden;
+}
+
+.multiple-ellipsis(@line: 1) {
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: @line;
+	-webkit-box-orient: vertical;
+}
+
+/*
+ * position utils
+ * ------------------------------------------------------ */
+.pos-hor-center(@width) {
+	margin-left: -(@width / 2);
+	left: 50%;
+}
+
+.pos-ver-center(@height) {
+	margin-top: -(@height / 2);
+	top: 50%;
+}
+
+.pos-center(@width; @height) {
+	position: absolute;
+	.pos-hor-center(@width);
+	.pos-ver-center(@height);
+}
+
+.pos-center-with-size(@width; @height; @size: 48rem) {
+	.pos-center(@width / @size; @height / @size);
+}
+
+.pos-center-offset-by-top(@width; @height; @marginLeft; @top; @size: 48rem) {
+	.size(@width; @height; @size);
+	margin-left: @marginLeft / @size;
+	position: absolute;
+	top: @top / @size;
+	left: 50%;
+}
+
+.pos-center-offset-by-bottom(@width; @height; @marginLeft; @bottom; @size: 48rem) {
+	.size(@width; @height; @size);
+	margin-left: @marginLeft / @size;
+	position: absolute;
+	bottom: @bottom / @size;
+	left: 50%;
+}
+
+.pos-by-top(@width; @height; @top; @leftOrRight; @posValue; @size: 48rem) {
+	.size(@width; @height; @size);
+	position: absolute;
+	top: @top / @size;
+	@{leftOrRight}: @posValue / @size;
+}
+
+.pos-by-bottom(@width; @height; @bottom; @leftOrRight; @posValue; @size: 48rem) {
+	.size(@width; @height; @size);
+	position: absolute;
+	bottom: @bottom / @size;
+	@{leftOrRight}: @posValue / @size;
+}
+
+.pos-by-center(@top; @right: 0; @bottom: 0; @left;) {
+	margin: @top @right @bottom @left;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}

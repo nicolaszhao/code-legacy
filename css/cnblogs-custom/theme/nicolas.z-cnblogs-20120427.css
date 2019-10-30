@@ -1,0 +1,302 @@
+/*
+blog: NICOLAS.Z
+url: http://nicolaszhao.cnblogs.com/
+modify date: April 26, 2012
+*/
+
+
+/* reset
+ ------------------------------------*/
+body, div,
+dl, dt, dd,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, code,
+form, fieldset, legend, input, textarea,
+p, blockquote,
+th, td { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset, img { border:0; }
+li { list-style:none; }
+caption, th { text-align:left; }
+q:before,
+q:after { content:''; }
+abbr, acronym { border:0; font-variant:normal; }
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+input, textarea, select { font-family:inherit; font-size:inherit; font-weight:inherit; }
+input, textarea, select { *font-size:100%; }
+legend { color:#444; }
+
+
+/* core
+ --------------------------------*/
+body { font: 12px/1.5 helvetica, sans-serif; color: #808080; text-align: left; }
+
+a { text-decoration:none; color:#333; }
+a:hover { text-decoration: underline; color:#61CDF5; }
+
+.clear { clear:both; }
+.clear-br { border-right: 0 !important; }
+.clear-pl { padding-left:0 !important; }
+
+/* layout
+ ------------------------------------*/
+#home { width: 960px; margin: 0 auto; background:#fff; position: relative; }
+#header { width: 100%; padding-bottom: 20px; margin-bottom: 28px; position: relative; }
+#main { margin-bottom: 35px; }
+#mainContent /*中间区块的左栏*/ { width: 100%; margin-right: -300px; float: left; }
+#mainContent .forFlow { margin-right: 360px; }
+#sideBar /*中间区块的右栏*/ { width: 300px; float: right; }
+#footer { margin: 30px 0; padding-top:15px; border-top:solid 1px #e8e8e8; color: #454545; clear: both; }
+
+/*
+ --页面标题------------------------------*/
+/*区块标题*/
+h3, 
+/*留言列表区标题*/
+.feedback_area_title , 
+/*发表评论表单标题*/
+#commentform_title { margin-bottom: 10px; font-size: 20px; line-height: 1.0; font-weight: 700; color: #555; }
+
+/*
+ --页眉区域------------------------------*/
+#blogTitle { width: 600px; }
+#blogTitle /*网站标题*/ { padding-top: 120px; }
+#blogTitle .title { font-size: 62px; line-height: 100%; }
+#blogTitle .title a { text-decoration: none; color:#61CDF5; }
+#blogTitle .subtitle { width: 80%; padding-bottom:3px; font-size: 56px; font-weight: 700; line-height: 90%; color: #555; }
+#navigator /*导航*/ { position: absolute; top: 15px; left: 0; }
+#navigator ul { padding-top: 10px; }
+#navigator li { display: inline; margin-right: 18px; }
+#navigator li a { font-size: 24px; font-weight: 700; text-decoration: none; color: #B8AFB2; }
+#navigator li a:hover { color: #555; }
+#navigator li .aHeaderXML { display: none; }
+#navigator .blogStats { color: #ccc; position: absolute; top: 105px; right: 0; }
+/*搜索*/
+.mySearch { position: absolute; top: 25px; right: 0; }
+.mySearch h3 { display: none; }
+.mySearch .div_my_zzk { padding: 5px 3px 3px 5px; border: solid 1px #ccc; }
+.mySearch .input_my_zzk,
+.mySearch .btn_my_zzk { float: left; }
+.mySearch .input_my_zzk { width: 180px; height: 16px; margin-right: 3px; border: 0; }
+.mySearch .btn_my_zzk { width: 16px; height: 16px; text-indent: -999px; overflow: hidden; cursor: pointer; border: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASlQTFRF/v7+8PDxwMLEfoOH2tvc5ebnZ2twy8zObG90h4qOkZWZgoaKmZue8vPzqayuqKutnqCjrK6xX2NoZGhtd3uA2drcYWVq0tPVhIeLY2dtxcfJj5OY2Nnax8nL8/PzkpeacXR56urrtri67O3tmp2hc3d8ury/lJiba25zzM7Qa290pKeq+Pj4io2RycvNaG1y29zevL7Azc7Pp6msbnJ2ZWlud3uBg4aKpqqs1NbXxMbIXWFm6Ojpen6C5OXmcnV6fICF8/P0s7W4aW1y1dfYf4SI9PT1bHF1w8XH+vv78PHxb3N40tPUq62wbHB11NXW7O3u7+/wcHZ67/Dw+/v8vsDD4uPk+vr6g4eKcnZ7hYqOsLO2jZGV6+vs1tfYhIiMkZSY////////+3fHfAAAAGN0Uk5T//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AdzUOmwAAALVJREFUeNpiSIIAFosoV/lQ3qQkBjCXQY1ZXUoz2oyLFSog6+AUkpjIoBwj7QYWcIw3ZkgEgYBIJrCAiyprIgRoJ4AFrIIYoQJMzGABdvdYCD9JMAIsoGiilATm63DwQ2zh0xIHUZ4q3nZgARZDXX0BAxsmEWcPsDtE7dn0fDVMJdkkfMAulVEQ5mRMCrRkDwsHOTopzk+MUy4JDhj8OYS4GZOQBGytzYOTkAWMeLyQ+UkAAQYAsUhKJvD7aJAAAAAASUVORK5CYII=) no-repeat 50% 50%; }
+
+/*
+ --页脚区域------------------------------*/
+#footer .site-map { overflow: hidden; }
+#footer ul { padding-left: 5px; margin-right: 50px; float: left; }
+#footer ul li { padding-bottom: 3px; margin-bottom: 3px; }
+
+/*
+ --文章信息相关------------------------------*/
+/*首页文章列表*/
+/*标题上方的发布日期*/
+.dayTitle { margin-bottom: 5px; }
+.dayTitle a { color: #ccc; }
+.dayTitle a:hover { color: #61CDF5; }
+/*文章标题*/
+.postTitle { margin-bottom: 5px; font-size: 18px; font-weight: 700; }
+.postTitle a { text-decoration: none; }
+/*正文文章标题*/
+h1.postTitle { margin-bottom: 15px; font-size: 26px; }
+/*摘要内容*/
+.postCon { margin-bottom: 5px; font-size: 14px; word-wrap: break-word; }
+.postCon a { text-decoration:underline; }
+.postCon a:hover { text-decoration:none; }
+.postDesc { margin-bottom: 15px; }
+.topicListFooter a { text-decoration: underline; }
+.topicListFooter a:hover { text-decoration: none; }
+
+/*
+ --正文下方和评论上方之间的区域-------------------------*/
+/*标签*/
+#EntryTag { margin-bottom: 20px; font-size: 14px; }
+#EntryTag a { margin: 3px; font-weight: 700; text-decoration: underline; }
+#EntryTag a:hover { text-decoration: none; }
+/*绿色通道的链接*/
+#green_channel { margin-bottom: 10px; color: #999; }
+#green_channel a { margin-right: 5px; }
+/*头像*/
+.author_avatar { padding:4px; margin: 0 10px 10px 0; border:solid 1px #c2c2c2; float:left; box-shadow: 3px 3px 2px #777; }
+/*加关注按钮*/
+#author_profile { width: 45%; position: relative; float: left; }
+#author_profile_follow { font-size: 28px; font-weight: 700; position: absolute; top: 5px; right: 0; }
+#author_profile_follow a { text-decoration: none; }
+/*推荐一下*/
+#div_digg  { line-height: 1.1; text-align: center; float: right; }
+.diggit { margin-bottom: 5px; font-size: 28px; }
+.diggit-text { font-weight: 700; cursor: pointer; color: #61CDF5; }
+.diggnum { color:#444; }
+.buryit { display: none; }
+.diggword { color:#B04F4C !important; }
+.diggword a { text-decoration:underline;  }
+.diggword a:hover { text-decoration: none; }
+/*文章导航（前一篇，后一篇）*/
+#post_next_prev { margin: 5px 0 10px; font-size: 14px; }
+#post_next_prev .p_n_p_prefix { font-family: tahoma, arial; text-decoration: none; }
+/*与文章发布相关的信息*/
+.postDesc a { margin: 0 3px; text-decoration:underline; }
+.postDesc a:hover { text-decoration: none; }
+
+/*
+ --用户评论区------------------------------*/
+/*留言列表*/
+.feedbackItem { margin-bottom: 15px; overflow: hidden; position: relative; }
+.feedbackListSubtitle { width: 135px; float: left; }
+.feedbackListSubtitle a { text-decoration: underline; background: #f5f5f5; }
+.feedbackListSubtitle a:hover { text-decoration: none; }
+.feedbackListSubtitle .sendMsg2This,
+.feedbackListSubtitle .feedbackManage a { display: block; text-decoration: none; color: #61cdf5; background: none; }
+.feedbackListSubtitle .sendMsg2This:hover,
+.feedbackListSubtitle .feedbackManage a:hover { text-decoration: underline; color: #333; }
+.feedbackListSubtitle .feedbackManage { position: absolute; bottom: 10px; left: 155px; }
+.feedbackListSubtitle .feedbackManage a { margin-right: 5px; float: left; }
+.feedbackCon { width: 435px; padding: 10px 10px 40px; border-top: solid 1px #e8e8e8; background: #f5f5f5; float: right; overflow: hidden; }
+.feedbackCon .comment_quote { padding: 0 8px 8px; background: #f8f8f8; border: 1px solid #dedede; }
+/*刷新评论列表后显示的信息*/
+#span_refresh_tips { color: #B04F4C !important; }
+#divCommentShow div { margin-bottom: 5px; color: #B04F4C !important; border: solid 1px #F5D961; background: #F5EABA; }
+/*回复后通过ajax显示于表单上方的评论*/
+#divCommentShow blockquote { padding: 8px 8px 8px 20px; margin-bottom: 10px; border-left: 1px solid #dedede; background: #f8f8f8; }
+#divCommentShow blockquote .comment_quote { padding: 0 8px 8px; background: #e8e8e8; border: 1px solid #ddd; }
+/*刷新评论按钮*/
+#comment_nav { margin-bottom: 15px; padding-top: 10px; }
+#comment_nav a { margin-right: 5px; text-decoration: underline; }
+#comment_nav a:hover { text-decoration: none; }
+/*评论提交按钮*/
+.comment_btn { height: 24px; padding: 0 8px; font-weight: 700; cursor: pointer; color: #fff; border: solid 1px #999; background: #bbb; border-radius: 2px; }
+.comment_btn:hover { border-color: #B3B3B3; background: #D5D5D5; text-shadow: 0 1px 1px #999; box-shadow: 0 0 2px #999; }
+
+
+
+/*评论表单*/
+#commentform_title { background: none; }
+.ad_commentbox_up /*评论表单-标题-右侧链接外容器*/  {  }
+
+/*override*/
+div.commentform p { margin:0 0 15px; line-height:inherit; }
+#tip_comment,
+.feedbackManage a span,
+div.commentform p span { color:#B04F4C !important; }
+div.commentform input.author, /*评论表单-文本框*/
+div.commentform input.email, 
+div.commentform input.url, 
+#tbAuthenCode, 
+textarea {
+	display: block;
+	width: 300px;
+	height: 20px;
+	padding: 4px;
+	font-size:12px;
+	border: solid 1px #c2c2c2;
+	background: none;
+}
+div.commentform textarea.comment_textarea { height: 200px; margin-bottom:15px; font-size:12px; resize: none; }
+
+
+/*
+ --左栏底部区域------------------------------*/
+.c_ad_block { margin: 30px 0; }
+.itnews .more { display: none; }
+.itnews li { list-style: decimal inside; }
+.itnews li strong { font-size: 14px; font-weight: 400; }
+.itnews li a { color: #777; }
+.itnews li a:hover { color: #61cdf5; }
+#site_nav_under { display:none; }
+#relative_search a { margin-right: 10px; font-size:20px; }
+
+/*
+ --右栏------------------------------*/
+#sideBar a { color:#777; }
+#sideBar a:hover { color: #61cdf5; }
+
+/*IT新闻*/
+.newsItem  { margin-bottom: 20px; position: relative; }
+#sideBar .newsItem .more { position: absolute; top: 2px; right: 0; color:#aaa; }
+#sideBar .newsItem .more:hover { color:#61cdf5; }
+.newsItem .catListTitle  { 	display: none; }
+.newsItem .cnblogs_news { margin-bottom: 20px; }
+#sideBar .newsItem .cnblogs_news li { padding:8px 10px; margin-bottom: 3px; }
+/*间隔行*/
+.newsItem .cnblogs_news .odd { background: #f5f5f5; }
+.newsItem .cnblogs_news li a { display:block; }
+.newsItem .cnblogs_news li span { display:none; }
+/*个人信息区*/
+#profile_block { padding: 10px; border: solid #EAEAEA; border-width: 3px 1px 1px; background: #f5f5f5; position: relative; }
+#profile_block a { color: #333; }
+#profile_block a:hover { color: #61cdf5; }
+#p_b_follow,
+#p_b_ing { font-size: 26px; font-weight: 700; line-height: 100%;  position: absolute; top: 10px; right: 10px; }
+#p_b_follow a,
+#p_b_ing a { text-decoration: none; color: #61cdf5; }
+#p_b_follow a:hover,
+#p_b_ing a:hover { color: #333; }
+
+#calendar /*日历*/ { padding: 5px; margin-bottom: 20px; font-size: 14px; border: solid #EAEAEA; border-width: 3px 1px 1px; background: #f5f5f5; }
+#sideBar #calendar a { display: block; font-weight: 700; color:#61cdf5; }
+#sideBar #calendar a:hover { color:#333; }
+#sideBar #calendar u { text-decoration: none; }
+#calendar table { width: 100%; }
+#calendar table th { padding: 10px 3px; text-align: center; }
+#calendar table td { padding: 2px; text-align: center; text-shadow: 0 1px 0 #fff; }
+#calendar .CalTitle { border: solid 1px #ddd; background: #EAEAEA; border-radius: 2px; }
+#calendar .CalTitle td { padding: 5px; font-size: 16px; font-weight: 700; }
+#calendar .CalTitle .CalNextPrev a { display: block; font-weight: 700; text-decoration: none; }
+
+.catListTag ul /*我的标签*/ { word-wrap: break-word; }
+.catListTag li  { display: inline; margin-right: 5px; }
+#sideBar .catListTag li a { text-decoration: underline; color: #333; }
+#sideBar .catListTag li a:hover { color: #61cdf5; }
+
+.divRecentCommentAticle /*最新评论*/ { margin-bottom:3px; }
+.divRecentComment { margin-bottom: 10px; }
+
+/*
+ * IT新闻下方各区块
+ */
+.catListLink /*常用链接*/, 
+.catListTag /*我的标签*/, 
+.catListPostArchive /*随笔档案*/, 
+.catList /*友情链接*/, 
+.catListEssay /*最新随笔*/, 
+.catListComment /*最新评论*/, 
+.catListView /*阅读排行榜*/,
+.catListFeedback {
+	margin-bottom: 20px;
+}
+
+.catListLink li { display: inline; margin-right: 5px; }
+.catListComment .recent_comment_author { margin-bottom: 5px; }
+
+/*正文文章区域*/
+#cnblogs_post_body { margin-bottom: 15px; font-size: 14px; }
+
+#cnblogs_post_body a { text-decoration: underline; }
+#cnblogs_post_body a:hover { text-decoration: none; }
+
+#cnblogs_post_body h3,
+#cnblogs_post_body h4,
+#cnblogs_post_body h5,
+#cnblogs_post_body h6 { margin-bottom:5px; font-weight: 400; color: #61cdf5; }
+#cnblogs_post_body h3 { font-size: 18px; font-weight: 700; }
+#cnblogs_post_body h4 { font-size: 16px; }
+#cnblogs_post_body h5 { font-size: 14px; }
+#cnblogs_post_body h6 { font-size: 12px; }
+
+#cnblogs_post_body p,
+#cnblogs_post_body ul,
+#cnblogs_post_body pre,
+#cnblogs_post_body table { margin: 0 0 15px; }
+#cnblogs_post_body li { margin-bottom:5px; list-style: decimal inside; }
+#cnblogs_post_body li ul li { margin: 0 0 0 20px; list-style: square inside; }
+#cnblogs_post_body li ul ul li { list-style: disc inside; }
+
+#cnblogs_post_body code { color: #333; background: #F5EABA; }
+#cnblogs_post_body pre { padding: 10px 10px 10px 20px; font-family: "Courier New"; white-space:pre-wrap; word-wrap:break-word; color: #333; border-left: solid 1px #F5D961; background: #F5EABA; }
+
+#cnblogs_post_body caption { padding-bottom: 5px; font-size: 14px; font-weight: 700; }
+#cnblogs_post_body th { padding: 5px 3px; font-size: 14px; border-bottom: solid 2px #777; }
+#cnblogs_post_body td { padding: 8px 6px 0; vertical-align: top; }
+
+#cnblogs_post_body img { padding: 4px; border: solid 1px #ddd; background: #E8E8E8; }

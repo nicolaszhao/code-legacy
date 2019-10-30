@@ -1,0 +1,219 @@
+/*
+ * CONTENTS ----------
+ *  1. BODY
+ *  2. GLOBAL ELEMENTS
+ *  	2.1 GRIDS
+ *  	2.2 LISTS
+ *  	2.3 CODES
+ *  3. GLOBAL CLASSES
+ *  4. LINKS
+ *  5. IMAGES
+ *  6. HEADINGS
+ *  7. LAYOUT
+ *  8. MASTHEAD
+ *  9. NAVIGATION
+ * 		9.1 MAIN NAVIGATION
+ * 		9.2 BREAD CRUMB
+ *  10. SITEINFO/FOOTER
+ *  11. FORM
+ * 		11.1 MESSAGES
+ * 		11.2 ERROR
+ *  12. WIDGET
+ *  	12.1 SEARCH
+ *  	12.2 LOGIN
+ *  13. HOMEPAGE
+ *
+ * Color Variables ----------
+ * @colordef #
+ * @colordef #
+ * @colordef #
+ */
+
+/*
+ * 1. BODY
+ * ------------------------------
+ */
+body {
+	font: 12px/1.5 Verdana;
+}
+
+/*
+ * 2. GLOBAL ELEMENTS ----------
+ * 2.1 GRIDS
+ */
+table {
+}
+
+th, td {
+}
+
+/*
+ * 2.2 LISTS
+ */
+li {
+}
+
+dt {
+}
+
+p {
+}
+
+/*
+ * 2.3 CODES
+ */
+samp {
+	display: block;
+	width: 300px;
+	padding: 5px;
+	color: #ccc;
+	border: groove 3px #ccc;
+	background: #000;
+}
+
+kbd {
+	padding: 2px 5px;
+	color: #333;
+	border: outset 1px #333;
+	background: #f1e7dd;
+}
+
+/*
+ * 3. GLOBAL CLASSES
+ * ------------------------------
+ */
+.clear {
+	clear: both;
+}
+
+.clear-text {
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+.clear-br {
+	border-right: 0;
+}
+
+.clear-bb {
+	border-bottom: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.disabled {
+	cursor: default !important;
+}
+
+/*
+ * 4. LINKS
+ * ------------------------------
+ */
+a {
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+}
+
+/*
+ * 5. IMAGES
+ * ------------------------------
+ */
+img {
+}
+
+/*
+ * 6. HEADINGS
+ * ------------------------------
+ */
+/*
+ * 7. LAYOUT
+ * ------------------------------
+ */
+#container {
+}
+
+#main {
+}
+
+#content {
+}
+
+/*
+ * 8. MASTHEAD
+ * ------------------------------
+ */
+#header {
+}
+
+#user-bar {
+}
+
+/*
+ * 9. NAVIGATION ----------
+ * 9.1 MAIN NAVIGATION
+ * ------------------------------
+ */
+#nav {
+}
+
+/*
+ * 9.2 BREAD CRUMB
+ */
+#bread-crumb {
+}
+
+/*
+ * 10. SITEINFO/FOOTER
+ * ------------------------------
+ */
+#footer {
+}
+
+/*
+ * 11. FORM
+ * ------------------------------
+ */
+
+/*
+ * 11.1 MESSAGES
+ * ------------------------------
+ */
+
+/*
+ * 11.2 ERROR
+ * ------------------------------
+ */
+
+/*
+ * 12. WIDGET ----------
+ * 12.1 SEARCH
+ * ------------------------------
+ */
+#search {
+}
+
+/*
+ * 12.2 LOGIN
+ * ------------------------------
+ */
+#login {
+}
+
+/*
+ * 13. HOMEPAGE
+ * ...
+ */
