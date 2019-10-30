@@ -1,0 +1,45 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	color: #444;
+}
+/*
+ ---jquery gallery plugin----------------*/
+#gallery {
+	width: 330px;
+	margin: 0 auto;
+}
+
+#gallery .items {
+	width: 330px;
+	height: 200px;
+	border: solid 1px #999;
+	overflow: hidden;
+	position: relative;
+}
+
+#gallery li {
+	width: 100px;
+	padding: 5px;
+	text-align: center;
+	position: relative;
+	float: left;
+}
+
+#gallery li img {
+	width: 100px;
+	position: relative;
+	border: 0;
+}

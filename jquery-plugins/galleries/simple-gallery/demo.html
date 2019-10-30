@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-language" content="zh-CN" />
+		<title>jQuery图片库插件</title>
+		<link rel="stylesheet" href="theme/gallery.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js">
+		</script>
+		<script src="js/jquery.gallery.js">
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				$("#gallery .items").gallery({
+					btnPrev: "#prev",
+					btnNext: "#next",
+					biggerWidth: 180,
+					circular: true
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="gallery">
+			<div class="items">
+				<ul>
+					<li>
+						<a href="index1.html"><img src="images/1.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href="index2.html"><img src="images/2.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href="index3.html"><img src="images/3.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href="index4.html"><img src="images/4.jpg" alt="" /></a>
+					</li>
+				</ul>
+			</div><input type="button" id="prev" value="prev" /><input type="button" id="next" value="next" />
+		</div>
+	</body>
+</html>

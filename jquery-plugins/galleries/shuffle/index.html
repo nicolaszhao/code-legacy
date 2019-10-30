@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Shuffle Plugin</title>
+		<style>
+			body, div, ul, li { padding: 0; margin: 0; }
+			ul { list-style: none; }
+			img { vertical-align: bottom; }
+			
+			#shuffle { width: 500px; height: 400px; margin: 150px auto; }
+			#shuffle li,
+			#shuffle img { width: 400px; height: 250px; }
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+		<script src="js/jquery.shuffle.js"></script>
+		<script>
+			$(function(){
+				$("#shuffle").shuffle({
+					direction: 'right bottom'
+				});
+			});
+		</script>
+    </head>
+    <body>
+        <ul id="shuffle">
+            <li>
+                <img src="images/08-seagull-nature-reserve.jpg" alt="08-seagull-nature-reserve" />
+            </li>
+            <li>
+                <img src="images/13th-Century-Grass-Covered-.jpg" alt="13th-Century-Grass-Covered" />
+            </li>
+            <li>
+                <img src="images/command-c.jpg" alt="command-c" />
+            </li>
+            <li>
+               	<img src="images/La-Citadelle-Laferriere-in-.jpg" alt="La-Citadelle-Laferriere-in-" />
+            </li>
+        </ul>
+    </body>
+</html>

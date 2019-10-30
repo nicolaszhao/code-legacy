@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<title>ELLE - TOP KV + FULL SCREEN互动广告  DEMO</title>
+		<meta charset="utf-8" />
+		
+		<!--
+		* 此Demo基础样式，演示使用
+		-->
+		<link rel="stylesheet" href="theme/base.css" />
+		
+		<!--
+		* full-banner.css
+		* 此广告插件的基础样式，必须引用
+		* 可根据不同需求修改样式，具体见该文件内的注释
+		-->
+		<link rel="stylesheet" href="theme/full-banner.css" />
+		
+		<style>
+			/*
+			 * 此Demo内容区样式，演示使用
+			 */
+			#main {
+				width: 980px;
+				margin: 10px auto;
+			}
+			
+			#content {
+				height: 4000px;
+				margin: 10px 0;
+				font-size: 14px;
+				text-align: center;
+				background: #ccc;
+			}
+			
+			.banner {
+				background: #999;
+			}
+			
+			.b-980x140 {
+				width: 980px;
+				height: 140px;
+			}
+		</style>
+		
+		<!--
+		* jquery.min.js: 版本请更新至：1.4.2，或可直接引用google的api映射
+		* 更新时务必请先测试网站有无版本兼容性引起的BUG-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js">
+		</script>
+		
+		<!--
+		* full-banner.js: 全屏广告插件，必须引用
+		-->
+		<script src="js/full-banner.js">
+		</script>
+		
+		<script>
+			// 在jquery的document.ready事件中调用全屏广告插件
+			// 可根据需求配置插件属性，具体插件属性请参考full-banner.js注释
+			$(function(){
+				$(".full").full({directionX: "right", container: "#main"});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			
+			<!--
+			* class="b-980x140": 此广告位为了演示Demo使用
+			-->
+			<div class="banner b-980x140">
+				980x140
+			</div>
+			
+			
+			
+			
+			
+			<!--
+			* class="full": 全屏广告基础DOM结构和HTML代码
+			-->
+			<div class="full">
+				
+				<!--
+				* class="full-banner": 用于发布广告和放置广告代码的容器
+				* 内部的text为该广告的说明文字，在正式部署时请删除
+				-->
+				<div class="full-banner">
+					广告类型：全屏广告
+					<br>
+					广告位大小：980 x 500
+					<br>
+					广告显示方式：页面加载后立即显示该广告，到了设定的时间后（比如5秒钟），以渐淡方式（或立即）隐藏广告；于此同时在页面上出现一个按钮或该广告的简略说明，点击该按钮后会重新显示广告，然后可以反复循环执行。
+				</div>
+				
+				<!--
+				* class="full-close": 广告的关闭按钮
+				* 可通过全屏广告插件来控制该按钮的显示和隐藏
+				* 可通过样式表修改该按钮在广告位的显示位置
+				-->
+				<a class="full-close" href="">关闭</a>
+				
+				<!--
+				* class="full-restart": 广告的重播按钮
+				* 可通过全屏广告插件来控制该按钮的显示和隐藏，及配置显示于页面的上、下、左、右的位置
+				* 可通过全屏广告插件来配置该按钮位于页面特定容器的位置，具体在该容器中的位置，可通过样式表进行修改，具体见样式表代码：".full-restart-static"
+				-->
+				<a class="full-restart" href="">重播</a>
+			</div>
+			
+			
+			
+			
+			
+			
+			<div id="content">
+				主内容区
+			</div>
+		</div>
+	</body>
+</html>

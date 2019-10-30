@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery - Plugin - Center Image</title>
+		<style type="text/css">
+			body, div, p, ul, ol, li { padding: 0; margin: 0; }
+			body { font: 11px/1.6 Trebuchet MS; color: #333; }
+			ul { list-style: none; }
+			.clearfix { clear: both; }
+			#container { width: 760px; margin: 0 auto; }
+			#header, #content { margin-bottom: 15px; }
+			#footer { color: #666; }
+			
+			#text-box { width: 300px; height: 200px; margin-bottom: 15px; padding: 10px; border: solid 1px #ccc; background: #e8e8e8; }
+			#text-box-content { width: 300px; height: 200px; }
+			#text-box-content div { width: 100px; height: 100px; padding: 5px; box-shadow: 2px 2px 1px #aaa; border: solid 1px #aaa; background: #fff; }
+			
+			#photo-box { width: 450px; height: 300px; padding: 10px; border:solid 1px #ccc; background: #e8e8e8; }
+			#photo-box-content { width: 450px; height: 300px; }
+			#photo-box-content img { padding: 4px; border: solid 1px #bbb; box-shadow: 0 0 5px #999; background: #fff; }
+			
+			#image-index { margin: 15px 0; }
+			#image-index li { margin-right: 5px; float: left; }
+			#image-index a { padding: 10px; font-size: 18px; text-decoration: none; color: #666; border: solid 1px #ccc; float: left; }
+			#image-index a:hover { color: #000; text-shadow: 0 1px 0 #fff; background: #fc0; }
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="js/jquery.centerimage.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$( '#photo-box img, #text-box .text' ).center();
+				
+				$( '#image-index' ).on( 'click', 'a', function( event ) {
+					var src = $( this ).attr( 'href' ),
+						$img = $( '#photo-box img[src$="' + src + '"]' ),
+						$photoBox = $( '#photo-box-content' );
+						
+					event.preventDefault();
+					
+					if (!$img.length) {
+						$img = $photoBox.empty()
+							.append( '<img/>' ).find( 'img' ).hide();
+							
+						$img.center({'src': src}).fadeIn();
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1>jQuery - Plugin - Center Image</h1>
+			</div>
+			<div id="content">
+				
+				<div id="text-box">
+					<div id="text-box-content">
+						<div class="text">jquery plugin center image</div>
+					</div>
+				</div>
+				
+				<div id="photo-box">
+					<div id="photo-box-content">
+						<img alt="" src="images/image1.jpg" />
+					</div>
+				</div>
+				
+				<ul id="image-index">
+					<li>
+						<a href="images/image1.jpg">Image 1</a>
+					</li>
+					<li>
+						<a href="images/image2.jpg">Image 2</a>
+					</li>
+					<li>
+						<a href="images/image3.jpg">Image 3</a>
+					</li>
+					<li>
+						<a href="images/image4.jpg">Image 4</a>
+					</li>
+					<li>
+						<a href="images/image5.jpg">Image 5</a>
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+				
+			</div>
+			<div id="footer">
+				<p>
+					&copy; Copyright 2012 by Nicolas.Z
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

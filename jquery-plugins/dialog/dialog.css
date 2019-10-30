@@ -1,0 +1,159 @@
+.dialog {
+	display: none;
+	position: absolute;
+	z-index: 1000;
+}
+
+.dialog-inner {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	background: #fff;
+}
+
+.dialog-titlebar {
+	height: 24px;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+.dialog-titlebar h2 {
+	padding: 9px 15px 0;
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.dialog-titlebar-close {
+	width: 41px;
+	height: 24px;
+	padding: 0;
+	overflow: hidden;
+	float: right;
+	border: 0;
+	cursor: pointer;
+	text-indent: -999px;
+	background: url(images/bg-button-dialog-close.png) no-repeat;
+}
+
+.dialog-titlebar-close:hover {
+	background-position: -41px 0;
+}
+
+.dialog-titlebar-close:active {
+	background-position: -82px 0;
+}
+
+.dialog-content {
+	width: 100%;
+	position: relative;
+	z-index: 0;
+}
+
+.dialog-overlay {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	overflow: hidden;
+	text-indent: -9999px;
+	background: #000;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+}
+
+.dialog .box-shadow {
+	z-index: 0;
+}
+
+.dialog-buttonpane {
+	
+}
+
+/*
+ * 其他属性从 .button class继承
+ */
+.dialog-button {
+	width: 64px;
+	height: 26px;
+	color: #333;
+	border: solid 1px #c2c2c2;
+	background: url(images/bg-button-dialog-buttons.png) repeat-x;
+}
+
+a.dialog-button {
+	height: 24px;
+	line-height: 24px;
+}
+
+.dialog-button:hover {
+	border-color: #3c8dff;
+	background-position: 0 -24px;
+}
+
+.dialog-button:focus,
+.dialog-button.button-state-focus {
+	border-color: #3c8dff;
+	background-position: 0 -96px;
+}
+
+.dialog-button:active {
+	border-color: #86a3cb;
+	background-position: 0 -48px;
+}
+
+.dialog-button.button[disabled],
+.dialog-button.button[disabled]:hover,
+.dialog-button.button[disabled]:focus,
+.dialog-button.button[disabled]:active,
+.dialog-button.button-state-disabled,
+.dialog-button.button-state-disabled:hover,
+.dialog-button.button-state-disabled:focus,
+.dialog-button.button-state-disabled:active {
+	color: #ccc;
+	border-color: #e7e7e7;
+	background-position: 0 -72px;
+}
+
+.dialog-confirm .dialog-content {
+	width: auto;
+	padding: 20px 42px 36px;
+}
+
+.dialog-confirm .dialog-confirm-message {
+	width: 100%;
+	height: 48px;
+	position: relative;
+	font-size: 12px;
+}
+
+.dialog-confirm .dialog-confirm-message-icon {
+	width: 48px;
+	height: 48px;
+	background: url(images/icon-dialog-confirm-warning.png) no-repeat;
+}
+
+.dialog-confirm .dialog-confirm-message-text {
+	position: absolute;
+	top: 50%;
+	left: 68px;
+	line-height: 1.5;
+}
+
+.dialog-confirm .dialog-buttonpane {
+    height: 35px;
+    padding: 8px 15px 0;
+    overflow: hidden;
+    border-top: 1px solid #edf0f5;
+    background: #f7f8fa;
+}
+
+.dialog-confirm .dialog-buttonpane .dialog-button {
+	margin-left: 8px;
+	float: right;
+}

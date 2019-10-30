@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, input, select, textarea {
+	font: 12px arial, helvetica, sans-serif;
+	line-height: 1.5;
+}
+
+body {
+	text-align: left;
+}
+
+h1 {
+	font-size: 16px;
+}
+
+h2 {
+	font-size: 14px;
+}
+
+h3 {
+	font-size: 12px;
+}
+
+table {
+	border: 0;
+	border-collapse: collapse;
+}
+
+img {
+	border: 0;
+	vertical-align: bottom;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+dt {
+	font-weight: 700;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.clear {
+	clear: both;
+}
+
+.text {
+	height: 18px;
+}
+
+.radio, .checkbox {
+	vertical-align: middle;
+}
+
+#main {
+	width: 980px;
+	height: 2000px;
+	margin: 0 auto;
+}
+
+#footer {
+	clear: both;
+}
+
+/*------------------------------
+ jquery fixed position
+ ------------------------------*/
+#fixed-box {
+	width: 250px;
+	height: 200px;
+	-moz-border-radius: 5px;
+	border: solid 1px #ccc;
+	background: #f7f7f7;
+}
+
+#fixed-box h2 {
+	margin: 5px;
+	padding: 3px 10px;
+	-moz-border-radius: 5px;
+	border: solid 1px #ccc;
+	background: #eee;
+}

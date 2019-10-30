@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Picture Slider Plug-in</title>
+		<link rel="stylesheet" href="theme/pic-slider.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js">
+		</script>
+		<script src="js/jquery.picSlider.js">
+		</script>
+		<script>
+			$(function(){
+				$("#pic-slider").picSlider({
+					btnPrev: ".prev",
+					btnNext: ".next"
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="pic-slider">
+			<a class="large" href="" target="_blank"><img src="images/image5.jpg" alt="图片 1 的标题" /><span class="title">图片 1 的标题</span><span class="bg"></span></a>
+			<div class="controls">
+				<a class="prev" title="上一张"></a>
+				<div class="items">
+					<ul>
+						<li>
+							<a href="index1.html" target="_blank"><img src="images/image5.jpg" alt="图片 1 的标题" /></a>
+						</li>
+						<li>
+							<a href="index2.html" target="_blank"><img src="images/image2.jpg" alt="图片 2 的标题" /></a>
+						</li>
+						<li>
+							<a href="" target="_blank"><img src="images/image5.jpg" alt="图片 3 的标题" /></a>
+						</li>
+						<li>
+							<a href="" target="_blank"><img src="images/image2.jpg" alt="图片 4 的标题" /></a>
+						</li>
+						<li>
+							<a href="" target="_blank"><img src="images/image5.jpg" alt="图片 5 的标题" /></a>
+						</li>
+						<li>
+							<a href="" target="_blank"><img src="images/image2.jpg" alt="图片 6 的标题" /></a>
+						</li>
+					</ul>
+				</div><a class="next" title="下一张"></a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+.banner {
+	background: #999;
+}
+
+.b-100x300 {
+	width: 100px;
+	height: 300px;
+}
+
+.bi-skyscraper dd {
+	display:none;
+	width: 100px;
+	overflow: hidden;
+}
+
+.bi-skyscraper dd .button {
+	display: block;
+	text-align: center;
+	background: #fff;
+}

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<title>ELLE - 对联广告 Demo</title>
+		<meta charset="utf-8" />
+		<!--
+		* DEMO的基础样式，不需要添加到正式环境
+		-->
+		<link rel="stylesheet" href="theme/base.css" />
+		
+		<!--
+		* 对联广告必须的样式
+		-->
+		<link rel="stylesheet" href="theme/bi-skyscraper.css" />
+		
+		<style>
+			/*
+			 * 这只是demo的css，不需要添加到正式环境
+			 * */
+			#main {
+				width: 980px;
+				height: 5000px;
+				margin: 10px auto;
+				background: #ccc;
+				-moz-border-radius: 5px;
+			}
+			
+			#main p {
+				text-align: center;
+				font-size: 25px;
+			}
+		</style>
+		
+		<!--
+		* demo的javascript类库
+		* 正式环境如果已经有了就不需要添加
+		-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js">
+		</script>
+		
+		<!--
+		* 对联广告jquery插件
+		* 必须添加
+		-->
+		<script src="js/jquery.bi-skyscraper.js">
+		</script>
+		<script>
+			$(function(){
+				// 引用插件，并设置重播状态时的替换HTML的参数
+				$(".bi-skyscraper").biSkyscraper({replaceHTML: "#min-html"});
+			});
+		</script>
+	</head>
+	<body>
+		<dl class="bi-skyscraper">
+			<dd>
+				<div class="banner b-100x300">
+					100x300 1
+				</div>
+				<a class="button" href="">关闭</a>
+			</dd>
+			<dd>
+				<div class="banner b-100x300">
+					100x300 2
+				</div>
+				<a class="button" href="">关闭</a>
+			</dd>
+		</dl>
+		
+		
+		<!--
+		* 重播替换HTML的demo
+		* 在正式环境下，id="min-html"的div内可以放置flash等
+		-->
+		<div id="min-html" style="display: none;">
+			<p style="width: 12px;">现在是缩小时的状态</p>
+		</div>
+		
+		<div id="main">
+			<p>
+				主内容区
+			</p>
+		</div>
+	</body>
+</html>

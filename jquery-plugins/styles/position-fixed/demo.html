@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Position Fixed Plugin</title>
+		<link rel="stylesheet" href="theme/position-fixed.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js">
+		</script>
+		<script src="js/jquery.positionfixed.js">
+		</script>
+		<script>
+			$(function(){
+				$("#fixed-box").fixed({
+					direction: {
+						//x:"right",
+						y: "bottom"
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="header">
+				<h1>jQuery Position Fixed Plugin</h1>
+			</div>
+			<div id="content">
+				<div id="fixed-box">
+					<h2>Fixed Box</h2>
+				</div>
+			</div>
+			<div id="footer">
+				&copy;Nicolas Zhao 2010.
+			</div>
+		</div>
+	</body>
+</html>

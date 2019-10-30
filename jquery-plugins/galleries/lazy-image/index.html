@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Plugin - Image Lazy Load</title>
+		<style>
+			body, div, ul, li { margin:0; padding:0; }
+			ul { list-style:none; }
+			a { text-decoration:none; color:#000; }
+			a:hover { color:#6F4321; }
+			a img { border:0; vertical-align:middle; }
+			body { font:12px Arial, Helvetica, sans-serif; }
+			
+			#lazy-image { width:550px; margin:25px auto; }
+			#lazy-image .images { width:414px; position:relative; float:right; }
+			#lazy-image .images li { width:414px; position:absolute; top:0; left:0; }
+			#lazy-image .images img { width:400px; padding:6px; border:solid 1px #eee; background:#fff; }
+			#lazy-image .loading { font-size:18px; font-weight:700; color:#fc0; position:absolute; top:15px; left:15px; z-index:999; }
+			#lazy-image .controller { float:left; }
+			#lazy-image .controller a { display:block; width:100px; height:30px; font-size:14px; line-height:30px; }
+			#lazy-image .controller a:hover { font-weight:700; }
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js">
+		</script>
+		<script src="js/jquery-lazyimage.js">
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				$("#lazy-image").lazyImage();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="lazy-image">
+			<ul class="images">
+				<li>
+					<a href=""></a>
+				</li>
+				<li>
+					<a href=""></a>
+				</li>
+				<li>
+					<a href=""></a>
+				</li>
+				<li>
+					<a href=""></a>
+				</li>
+			</ul>
+			<ul class="controller">
+				<li>
+					<a href="http://www.wallcoo.com/paint/Robert_Finale_art_paintings/wallpapers/1280x800/Robert_Finale_art_paintings_PortofinoDawn.jpg">&raquo; Image 1</a>
+				</li>
+				<li>
+					<a href="http://www.wallcoo.com/paint/Robert_Finale_art_paintings/wallpapers/1280x800/Robert_Finale_art_paintings_ReflectionOfBelgium.jpg">&raquo; Image 2</a>
+				</li>
+				<li>
+					<a href="http://www.wallcoo.com/paint/Robert_Finale_art_paintings/wallpapers/1280x800/Robert_Finale_art_paintings_SummerBreeze.jpg">&raquo; Image 3</a>
+				</li>
+				<li>
+					<a href="http://www.wallcoo.com/paint/Robert_Finale_art_paintings/wallpapers/1280x800/Robert_Finale_art_paintings_NewBeginnings.jpg">&raquo; Image 4</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

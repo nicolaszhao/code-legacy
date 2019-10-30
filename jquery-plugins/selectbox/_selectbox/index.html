@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>jQuery Style Selectbox Plugin</title>
+		<style>
+			div, body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font: 12px/1 "Microsoft YaHei", Helvetica, Verdana, sans-serif;
+			}
+			
+		</style>
+		<link rel="stylesheet" href="css/selectbox.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="js/keycode.js"></script>
+		<script src="js/jquery.selectbox.js"></script>
+		<script>
+			$(function() {
+				$('select')
+					.on('change', function() {
+						console.log(this.value);
+					})
+					.selectbox();
+			});
+		</script>
+	</head>
+	<body>
+		<label>选项1：</label>
+		<select name="history">
+			<option value="1">过去一小时</option>
+			<option selected="selected" value="2">过去一天</option>
+			<option value="3">过去一周</option>
+			<option value="4">过去四周</option>
+			<option value="0">全部</option>
+		</select>
+
+		<label>选项1：</label>
+		<select name="history">
+			<option value="1">过去一小时</option>
+			<option selected="selected" value="2">过去一天</option>
+			<option value="3">过去一周</option>
+			<option value="4">过去四周</option>
+			<option value="0">全部</option>
+		</select>
+		<select name="history2">
+			<option value="1">过去一小时</option>
+			<option selected="selected" value="2">过去一天</option>
+			<option value="3">过去一周</option>
+			<option value="4">过去四周</option>
+			<option value="0">全部</option>
+		</select>
+	</body>
+</html>

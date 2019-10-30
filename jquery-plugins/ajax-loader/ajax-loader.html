@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Loader</title>
+		<style>
+			body, div, p, ul, ol, li { padding: 0; margin: 0; }
+			body { font: 11px/1.6 Trebuchet MS; color: #333; }
+			#container { width: 760px; margin: 0 auto; }
+			#header, #content { margin-bottom: 15px; }
+			#footer { color: #666; }
+			
+			.loader-loading { background: #fff url(images/icon-ajax-loader.gif) no-repeat 3px 3px; opacity: 0.7; }
+			
+			.widget { margin-bottom: 15px; }
+			.data-box { width: 150px; margin-bottom: 5px; padding: 5px; border: solid 1px #ccc; background: #f1f1f1; }
+			.data-box strong { font-size: 12px; }
+			.button { padding: 3px 6px; cursor: pointer; color: #666; text-shadow: 0 1px 0 #fff; border: solid 1px #aaa; border-radius: 3px; background: #ddd; }
+			.button:hover { background: #f1f1f1; box-shadow: 0 0 3px #999; }
+			
+			#log { margin-top: 15px; font-style: italic; color: #c00; }
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script src="js/jquery-ajaxloader.js"></script>
+		<script>
+			$(function() {
+				var $modules1 = $('#data1-1, #data1-2'),
+				 	$modules2 = $('#data2-1, #data2-2'),
+				 	$modules3 = $('#data3-1');
+				 	
+				var updateContent = function( $module, data ) {
+					var html = '<p>';
+								
+					$.each( data, function( key, value ) {
+						html += '<strong>' + key + ': </strong>' + value + ', ';
+					});
+					html += '</p>';
+
+                    $module.html(html);
+                };
+
+                $.loader('data1').add($('#data1-1'));
+                $.loader('data1').add($('#data1-2'));
+                $.loader('data1').add($modules2);
+                $.loader('data3').add($modules3);
+
+				// 输出错误日志
+				$('body').bind('ajaxError', function(event, xhr, setting, thrownError) {
+					// 过滤掉 abort 的错误信息
+					if (xhr.status === 0 || xhr.readyState === 0 || xhr.statusText === 'abort') {
+						return;
+					}
+					$('#log').append('<p>' + thrownError + '</p>');
+				});
+				
+				$('#request1').bind('click', function() {
+					$.loader('data1').request('server/data1.php', function(res) {
+					    updateContent($modules1, res);
+					});
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1>jQuery AJAX Loader</h1>
+			</div>
+			<div id="content">
+				<div class="widget">
+					<div id="data1-1" class="data-box">data1</div>
+					<div id="data1-2" class="data-box">data1</div>
+					<input type="button" id="request1" class="button" value="Get Data" />
+				</div>
+				<div class="widget">
+					<div id="data2-1" class="data-box">data2</div>
+					<div id="data2-2" class="data-box">data2</div>
+					<input type="button" id="request2" class="button" value="Get Data" />
+				</div>
+				<div class="widget">
+					<div id="data3-1" class="data-box">data3</div>
+					<input type="button" id="request3" class="button" value="Get Data" />
+				</div>
+				<div id="log"></div>
+			</div>
+			<div id="footer">
+				<p>
+					&copy; Copyright 2012 by Nicolas.Z
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
