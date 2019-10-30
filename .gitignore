@@ -60,3 +60,5 @@ typings/
 # IDEs
 .idea/
 .vscode/
+
+dist/
