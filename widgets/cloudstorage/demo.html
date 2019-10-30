@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Cloud Storage - localStorage云存储方案</title>
+		<script src="js/cloudstorage.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="api">
+				<h2>Remote Url: <span class="remote-url" style="font-size: 14px; font-weight: 400; color: #999;"></span></h2>
+				<div class="local-content content">
+					<input type="text" class="key" placeholder="Key" />
+					<input type="text" class="value" placeholder="Value" />
+					<p class="feedback"></p>
+					<div class="buttonpane">
+						<button type="button" class="set">cloudStorage.setItem</button>
+						<button type="button" class="get">cloudStorage.getItem</button>
+						<button type="button" class="remove">cloudStorage.removeItem</button>
+						<button type="button" class="clear">cloudStorage.clear</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var remoteUrls = {
+				local: 'http://n.cn:8080/blueray-cloudstorage/src/cloudstorage-server.html',
+				webapi: 'http://webapi.br.baidu.com/api_res/html/cloudstorage-server.html'
+			};
+			
+			var cloudStorageManager = {
+				events: function() {
+					var that = this;
+					
+					this.$el
+						.on('click', 'button.set', function() {
+							var key = that.$key.val(),
+								value = that.$value.val();
+								
+							key = $.trim(key);
+							value = $.trim(value);
+							
+							if (key && value) {
+								cloudStorage.setItem(key, value).done(function() {
+									that.$feedback.text('Do cloudStorage.setItem ok!');
+								});
+							}
+						})
+						.on('click', 'button.get', function() {
+							var key = that.$key.val();
+								
+							key = $.trim(key);
+							
+							if (key) {
+								cloudStorage.getItem(key).done(function(value) {
+									that.$feedback.text('Do cloudStorage.getItem ok! The value of ' + key + ' is: ' + value);
+								});
+							}
+						})
+						.on('click', 'button.remove', function() {
+							var key = that.$key.val();
+								
+							key = $.trim(key);
+							
+							if (key) {
+								cloudStorage.removeItem(key).done(function() {
+									that.$feedback.text('Do cloudStorage.removeItem ok!');
+								});
+							}
+						})
+						.on('click', 'button.clear', function() {
+							cloudStorage.clear();
+							that.$feedback.text('Do cloudStorage.clear ok!');
+						});
+				},
+				
+				init: function() {
+					this.$el = $('.api');
+					
+					this.$key = this.$el.find('.key');
+					this.$value = this.$el.find('.value');
+					this.$feedback = this.$el.find('.feedback');
+					
+					createCloudStorage(remoteUrls.webapi).done(function() {
+						cloudStorageManager.$el.find('.remote-url').text(remoteUrls.webapi);
+						cloudStorageManager.events();
+					});
+				}
+			};
+			
+			cloudStorageManager.init();
+		</script>
+	</body>
+</html>

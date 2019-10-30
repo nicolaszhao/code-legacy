@@ -1,0 +1,103 @@
+.log-console {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	font: 12px/1 Consolas;
+	color: #18191A;
+	background: #fcfcfc;
+}
+
+.log-console-toolbar {
+	padding: 2px 3px; 
+	border: solid 1px #aaa;
+	border-width: 1px 0;
+	background: #f0f1f2;
+}
+
+.log-console-toolbar .log-console-button {
+	width: 78px;
+	height: 19px;
+	margin-right: 2px;
+	padding: 0;
+	font-family: inherit;
+	font-size: 12px;
+	text-align: center;
+	outline: none;
+	border: none;
+	background: #cfe0ed;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.log-console-toolbar .log-console-button:hover {
+	background: #aed0e8;
+}
+
+.log-console-content {
+	padding-left: 6px; 
+	max-height: 240px; 
+	overflow: auto;
+}
+
+.log-console-content p {
+	padding-left: 10px;
+	line-height: 20px;
+	border-left: solid 6px #aaa;
+	color: #18191a;
+}
+
+.log-console-content p:hover {
+	background: #d3e6f4;
+}
+
+.log-console-content .log-console-log {
+	border-color: #aaa;
+}
+
+.log-console-content .log-console-info {
+	border-color: #13bcf1;
+}
+
+.log-console-content .log-console-warn {
+	border-color: #fca526;
+}
+
+.log-console-content .log-console-error {
+	border-color: #d43232;
+	background: #fddddd;
+}
+
+.log-console-content .log-console-text-wr {
+	padding-left: 6px;
+}
+
+.log-console-content .log-console-text-item {
+	padding-left: 6px;
+}
+
+.log-console-content .log-console-text-label {
+	padding: 0 6px;
+	color: #2c699f;
+}
+
+.log-console-content .log-console-text-number {
+	color: #6e8900;
+}
+
+.log-console-content .log-console-text-boolean {
+	color: #bf5656;
+}
+
+.log-console-content .log-console-text-string {
+	color: #cd9a50;
+}
+
+.log-console-content .log-console-text-others {
+	color: #757772;
+}
+
+

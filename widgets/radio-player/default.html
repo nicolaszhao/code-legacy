@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Radio Player</title>
+		<link rel="stylesheet" href="theme/all.css" />
+		
+		<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+		<script src="js/libs/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/libs/modernizr.custom.js"></script>
+		<script src="js/libs/soundmanager/script/soundmanager2.js"></script>
+	</head>
+	<body>
+		<div class="radio-widget">
+			<div class="radio-error">
+				<div class="radio-error-inner">
+					<span class="radio-logo"></span>
+					<span class="radio-error-info">正在修理麦克风请稍候再来</span>
+					<a class="radio-button-refresh" href="">刷新</a>
+				</div>
+			</div>
+			<div class="radio-player">
+				<h1 class="radio-logo"></h1>
+				<div class="radio-player-loading">
+					<div class="radio-player-loading-inner">
+						<span class="radio-logo"></span>
+						<span class="radio-player-loading-text">is on the air</span>
+						<span class="radio-player-loading-icon"></span>
+					</div>
+				</div>
+				<div class="radio-player-state">
+					<div class="radio-player-state-loading">
+						<div class="radio-player-state-loading-icon"></div>
+						<div class="radio-player-state-loading-overlay"></div>
+					</div>
+					<a class="radio-button-play radio-state-play" href="">
+						<span class="radio-button-icon"></span>
+					</a>
+					<div class="radio-player-album-pane">
+						<img class="radio-player-album" alt="" src="" />
+						<span class="radio-player-album-overlay"></span>
+					</div>
+					<div class="radio-player-progressbar">
+						<div class="radio-player-progressbar-value"></div>
+						<div class="radio-player-progressbar-cover-left">
+							<div class="radio-player-progressbar-cover-left-inner"></div>
+						</div>
+						<div class="radio-player-progressbar-cover-right"></div>
+					</div>
+				</div>
+				<p class="radio-player-info">
+					<a href="" class="radio-player-info-name" target="_blank"></a>
+					<span class="radio-player-info-artist"></span>
+				</p>
+				<div class="radio-player-control">
+					<a class="radio-button-volume-switch radio-state-voiced" href=""></a>
+					<div class="radio-player-volume-bar"></div>
+					<a class="radio-button-next" href=""></a>
+				</div>
+			</div>
+			<div class="radio-channels">
+				<div class="radio-channels-control-pane">
+					<ul>
+						<li class="radio-channels-control">
+							<a class="radio-button-expand radio-state-expand" href="">
+								<span class="radio-button-icon"></span>
+								<span class="radio-button-text">
+									<span class="radio-cur-channel-label">当前电台：</span>
+									<span class="radio-cur-channel-text">随心听</span>
+									<span class="radio-button-text-highlight">换电台</span>
+								</span>
+							</a>
+						</li>
+						<li class="radio-channels-sub">
+							<a class="radio-link" href="http://www.xiami.com" target="_blank">虾米音乐提供</a>
+						</li>
+					</ul>
+					<div class="radio-channels-control-pane-overlay"></div>
+				</div>
+				<div class="radio-channels-types-pane">
+					<div class="radio-channels-loading"></div>
+					<div class="radio-channels-types-pane-inner">
+					</div>
+					<div class="radio-channels-types-pane-overlay"></div>
+				</div>
+					
+			</div>
+		</div>
+		
+		<script src="js/utils.js"></script>
+		<script src="js/data.js"></script>
+		<script src="js/radio-player.js"></script>
+		<script src="js/radios.js"></script>
+		<script>
+			new Radios('.radio-widget');
+		</script>
+	</body>
+</html>
